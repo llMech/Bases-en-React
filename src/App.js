@@ -1,25 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { Tareas } from './Tarea.js';
+
 
 function App() {
+  const [click, setclick] = useState(0);
+
+
+  const manejarclick = () => {
+    setclick(prev => prev + 1);
+  };
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Titulo contador={click} />
+      <Barra />
+      <Boton alHacerClick={manejarclick} />
+      <Tareas />
+      <Tareas />
+    </>
   );
 }
+
+
+function Barra() {
+  return (
+    <input placeholder='Escribe algo aqui...' />
+  );
+}
+
+
+function Titulo(props) {
+  return (
+    <h1>Tareas Completadas {props.contador} de 5</h1>
+  );
+}
+
+
+function Boton({ alHacerClick }) {
+  return (
+    <button onClick={alHacerClick}>Click</button>
+  );
+}
+
 
 export default App;
