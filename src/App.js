@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Tareas } from './Tarea.js'; 
+import { Tareas, TemporizadorHola } from './Tarea.js'; 
 
 function App() {
 
@@ -32,6 +32,7 @@ function App() {
       <Tareas />
       <Tareas />
       <Boton alHacerClick={manejarclick} />
+      <TemporizadorHola/>
     </>
   );
 }
