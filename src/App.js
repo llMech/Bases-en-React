@@ -1,47 +1,58 @@
 import './App.css';
 import { useState } from 'react';
-import { Tareas } from './Tarea.js';
-
+import { Tareas } from './Tarea.js'; 
 
 function App() {
+
+  
   const [click, setclick] = useState(0);
-
-
+  const [cadena, setcadena] = useState('');
+  
   const manejarclick = () => {
     setclick(prev => prev + 1);
   };
+
+  // Recibimos el evento 'e' para capturar el valor del input
+  const manejarEscritura = (e) => {
+    setcadena(e.target.value);
+  };
  
+
   return (
     <>
+      <Titulo2 texto={cadena} />
       <Titulo contador={click} />
-      <Barra />
+      <Barra alCambiar={manejarEscritura} />
       <Boton alHacerClick={manejarclick} />
-      <Tareas />
       <Tareas />
     </>
   );
 }
 
 
-function Barra() {
+function Titulo({ contador }) {
   return (
-    <input placeholder='Escribe algo aqui...' />
+    <h1>Tareas Completadas {contador} de 5</h1>
+  );
+}
+
+function Titulo2({ texto }) {
+  return (
+    <h1>Cadena ingresada: {texto}</h1>
   );
 }
 
 
-function Titulo(props) {
+function Barra({ alCambiar }) {
   return (
-    <h1>Tareas Completadas {props.contador} de 5</h1>
+    <input onChange={alCambiar} placeholder='Escribe algo aqui...' />
   );
 }
-
 
 function Boton({ alHacerClick }) {
   return (
-    <button onClick={alHacerClick}>Click</button>
+    <button onClick={alHacerClick}>Incrementar Contador</button>
   );
 }
-
 
 export default App;
