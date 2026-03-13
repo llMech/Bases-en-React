@@ -18,3 +18,7 @@ button{
   font-size: 20px;
   cursor: pointer;
 }
+
+hr{
+  border: 1px solid rgba(253, 253, 253, 0.543);
+}

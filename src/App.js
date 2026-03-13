@@ -20,10 +20,10 @@ function App() {
 
   return (
     <>
-      <Titulo2 texto={cadena} />
       <Titulo contador={click} />
-      <Barra alCambiar={manejarEscritura} />
       <Boton alHacerClick={manejarclick} />
+      <Barra alCambiar={manejarEscritura} />
+      <Titulo2 texto={cadena} />
       <Tareas />
     </>
   );
@@ -54,5 +54,6 @@ function Boton({ alHacerClick }) {
     <button onClick={alHacerClick}>Incrementar Contador</button>
   );
 }
+
 
 export default App;
