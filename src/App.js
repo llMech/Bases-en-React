@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tareas } from './Tarea.js'; 
 
 function App() {
@@ -7,6 +7,11 @@ function App() {
   
   const [click, setclick] = useState(0);
   const [cadena, setcadena] = useState('');
+
+  useEffect(() => {
+    console.log('El contador ha cambiado a:', click);
+  }, [click])
+
   
   const manejarclick = () => {
     setclick(prev => prev + 1);
@@ -23,8 +28,10 @@ function App() {
       <Titulo2 texto={cadena} />
       <Titulo contador={click} />
       <Barra alCambiar={manejarEscritura} />
-      <Boton alHacerClick={manejarclick} />
       <Tareas />
+      <Tareas />
+      <Tareas />
+      <Boton alHacerClick={manejarclick} />
     </>
   );
 }
