@@ -1,0 +1,148 @@
+.tareas-container {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: visible;
+  position: relative;
+}
+
+.input-top {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 2px solid #a0c4f8;
+  border-radius: 8px 8px 0 0;
+  outline: none;
+  background: #f0f6ff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.input-top:focus {
+  border-color: #5b9cf6;
+  background: #e8f1ff;
+}
+
+.lista-tareas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tarea-item {
+  display: flex;
+  align-items: center;
+  padding: 13px 16px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #f5f5f5;
+  gap: 12px;
+  position: relative;
+}
+
+.tarea-item:last-child {
+  border-bottom: none;
+}
+
+.btn-completar {
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  width: 24px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.tarea-texto {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.tarea-texto.completada {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.btn-eliminar {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  color: #888;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+.btn-eliminar:hover {
+  color: #e74c3c;
+}
+
+.bottom-bar {
+  padding: 14px 16px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.click-info {
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+}
+
+.bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-click {
+  padding: 8px 32px;
+  background: #f0f0f0;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-click:hover {
+  background: #e0e0e0;
+}
+
+.btn-float {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #5b9cf6;
+  color: white;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(91, 156, 246, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-float:hover {
+  background: #357abd;
+  transform: scale(1.08);
+}
