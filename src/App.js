@@ -1,9 +1,17 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Tareas } from './Tarea.js';
 
 function App() {
-  const [click, setclick] = useState(0);
+  const [click, setclick] = useState(() => {
+    const guardado = localStorage.getItem("contador");
+    return guardado ? parseInt(guardado) : 0;
+  });
+
+  // Guarda el contador cada vez que cambia
+  useEffect(() => {
+    localStorage.setItem("contador", click);
+  }, [click]);
 
   const manejarclick = () => {
     setclick(prev => prev + 1);

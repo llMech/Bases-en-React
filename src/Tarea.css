@@ -1,30 +1,81 @@
 .tareas-container {
   width: 100%;
   max-width: 560px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
   overflow: visible;
   position: relative;
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
 }
 
+/* Buscador */
+.buscador-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2e2e2e;
+  border-radius: 12px 12px 0 0;
+  gap: 8px;
+}
+
+.buscador-icono {
+  font-size: 15px;
+  color: #a855f7;
+  flex-shrink: 0;
+}
+
+.input-buscador {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #e0e0e0;
+  background: transparent;
+}
+
+.input-buscador::placeholder {
+  color: #555;
+}
+
+.btn-limpiar {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+.btn-limpiar:hover {
+  color: #a855f7;
+}
+
+/* Input nueva tarea */
 .input-top {
   width: 100%;
   padding: 14px 16px;
   font-size: 15px;
-  border: 2px solid #a0c4f8;
-  border-radius: 8px 8px 0 0;
+  border: none;
+  border-bottom: 1px solid #2e2e2e;
   outline: none;
-  background: #f0f6ff;
-  color: #333;
+  background: #111;
+  color: #e0e0e0;
   box-sizing: border-box;
 }
 
-.input-top:focus {
-  border-color: #5b9cf6;
-  background: #e8f1ff;
+.input-top::placeholder {
+  color: #555;
 }
 
+.input-top:focus {
+  background: #1e1230;
+  border-bottom: 1px solid #a855f7;
+}
+
+/* Lista */
 .lista-tareas {
   list-style: none;
   margin: 0;
@@ -35,10 +86,15 @@
   display: flex;
   align-items: center;
   padding: 13px 16px;
-  border-bottom: 1px solid #e8e8e8;
-  background: #f5f5f5;
+  border-bottom: 1px solid #2e2e2e;
+  background: #141414;
   gap: 12px;
   position: relative;
+  transition: background 0.15s;
+}
+
+.tarea-item:hover {
+  background: #1e1230;
 }
 
 .tarea-item:last-child {
@@ -50,23 +106,28 @@
   border: none;
   font-weight: 700;
   font-size: 14px;
-  color: #555;
+  color: #a855f7;
   cursor: pointer;
   width: 24px;
   flex-shrink: 0;
   padding: 0;
+  transition: color 0.15s;
+}
+
+.btn-completar:hover {
+  color: #c084fc;
 }
 
 .tarea-texto {
   flex: 1;
   font-size: 15px;
-  color: #333;
+  color: #d0d0d0;
   text-align: center;
 }
 
 .tarea-texto.completada {
   text-decoration: line-through;
-  color: #aaa;
+  color: #444;
 }
 
 .btn-eliminar {
@@ -77,30 +138,39 @@
   border: none;
   font-weight: 700;
   font-size: 12px;
-  color: #888;
+  color: #444;
   cursor: pointer;
   padding: 2px 4px;
   transition: color 0.15s;
 }
 
 .btn-eliminar:hover {
-  color: #e74c3c;
+  color: #f87171;
 }
 
+.sin-resultados {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 14px;
+  background: #141414;
+}
+
+/* Barra inferior */
 .bottom-bar {
   padding: 14px 16px;
-  background: #fff;
-  border-top: 1px solid #e8e8e8;
-  border-radius: 0 0 10px 10px;
+  background: #1a1a1a;
+  border-top: 1px solid #2e2e2e;
+  border-radius: 0 0 12px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .click-info {
   font-size: 14px;
-  color: #444;
+  color: #888;
   text-align: center;
 }
 
@@ -112,37 +182,39 @@
 
 .btn-click {
   padding: 8px 32px;
-  background: #f0f0f0;
-  color: #444;
-  border: 1px solid #ccc;
+  background: #2a2a2a;
+  color: #ccc;
+  border: 1px solid #3d3d3d;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .btn-click:hover {
-  background: #e0e0e0;
+  background: #1e1230;
+  border-color: #a855f7;
+  color: #a855f7;
 }
 
 .btn-float {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #5b9cf6;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
   color: white;
   font-size: 26px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(91, 156, 246, 0.45);
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, transform 0.15s;
+  transition: transform 0.15s, box-shadow 0.2s;
 }
 
 .btn-float:hover {
-  background: #357abd;
-  transform: scale(1.08);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.7);
 }
